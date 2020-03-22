@@ -15,7 +15,7 @@ public class HomePage extends Base{
 	    driver.get("http://www.facebook.com");
 	    driver.manage().window().maximize();
 	    iSteps.SignUp();
-	    System.out.println("");
+	    System.out.println("Agkku");
 		       	       
 	}
 	
