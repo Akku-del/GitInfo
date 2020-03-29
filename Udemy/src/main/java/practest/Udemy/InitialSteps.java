@@ -46,24 +46,12 @@ public class InitialSteps extends Base
 	 
 	public void SignUp() throws IOException
 	{
-		
-		String log4JPropertyFile = "C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\src\\main\\resources\\log4j.properties";
-		Properties p = new Properties();
-
-		try {
-		    p.load(new FileInputStream(log4JPropertyFile));
-		    PropertyConfigurator.configure(p);
-		    logger.info("Wow! I'm configured!");
-		} catch (IOException e) {
-		    //DAMN! I'm not....
-
-		}
 		Base.initializeDriver();
 		driver.get("https://www.facebook.com");
 		driver.manage().window().maximize();
 		InitialWithoutPageFactory pagewithoutfactory=new InitialWithoutPageFactory();
 		InitialPage pageObject=new InitialPage();
-		 logger.trace("Entering application.");
+		logger.trace("Entering application.");
 		pageObject.firstnamepf.sendKeys("test");
 		pageObject.lastnamepf.sendKeys("bansal");
 		pagewithoutfactory.email.sendKeys("noreply@test.com");
