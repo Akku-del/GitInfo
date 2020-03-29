@@ -3,9 +3,24 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
 
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.*;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -15,30 +30,53 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
+import practest.Udemy.InitialPage;
+import practest.Udemy.Base;
+import practest.Udemy.InitialWithoutPageFactory;
 
-import practest.Udemy.*;
-
-public class InitialSteps extends Base {
+public class InitialSteps extends Base
+{
+	private static final Logger logger = LogManager.getLogger(InitialSteps.class.getName());
 	
-WebDriver localDriver;
-	InitialSteps(WebDriver driver)
+	InitialSteps()
 	{
-		this.localDriver=driver;
+		System.out.println("Start Initial Steps");
 	}
-	 InitialPage pageObject=new InitialPage(driver);
-	public void SignUp()
+	 
+	public void SignUp() throws IOException
 	{
 		
+		String log4JPropertyFile = "C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\src\\main\\resources\\log4j.properties";
+		Properties p = new Properties();
+
+		try {
+		    p.load(new FileInputStream(log4JPropertyFile));
+		    PropertyConfigurator.configure(p);
+		    logger.info("Wow! I'm configured!");
+		} catch (IOException e) {
+		    //DAMN! I'm not....
+
+		}
+		Base.initializeDriver();
+		driver.get("https://www.facebook.com");
+		driver.manage().window().maximize();
+		InitialWithoutPageFactory pagewithoutfactory=new InitialWithoutPageFactory();
+		InitialPage pageObject=new InitialPage();
+		 logger.trace("Entering application.");
 		pageObject.firstnamepf.sendKeys("test");
 		pageObject.lastnamepf.sendKeys("bansal");
-		pageObject.email.sendKeys("noreply@test.com");
-		pageObject.password.sendKeys("akku");
-		
+		pagewithoutfactory.email.sendKeys("noreply@test.com");
+		pagewithoutfactory.password.sendKeys("akku");
+		logger.info("Enter Info:");
 		TakesScreenshot scrShot =(TakesScreenshot)driver;
-		File cFile=scrShot.getScreenshotAs(OutputType.FILE);
-		File dFile=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Seleniumshots\\inputdetails.png");
+		File cFileY=scrShot.getScreenshotAs(OutputType.FILE);
+		SimpleDateFormat fs=new SimpleDateFormat("yyyyMMddHHmmss");
+		Calendar cals= Calendar.getInstance();
+		Date cal=cals.getTime();
+		File dFileY=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Seleniumshots\\" + fs.format(cal) +".png");
 		try {
-			FileUtils.copyFile(cFile, dFile);
+			FileUtils.copyFile(cFileY, dFileY);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,7 +84,7 @@ WebDriver localDriver;
 		
 		
 		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();", pageObject.oSelectDay);
+		js.executeScript("arguments[0].scrollIntoView();", pagewithoutfactory.oSelectDay);
 		
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		
@@ -60,54 +98,54 @@ WebDriver localDriver;
 		} catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		
-		Select oSelectDayOfMonth=new Select(pageObject.oSelectDay);
+		//String log4jConfigFile = System.getProperty("user.dir") + File.separator + "log4j.xml";
+		//DOMConfigurator.configure(log4jConfigFile);
+		logger.debug("Debug:");
+		Select oSelectDayOfMonth=new Select(pagewithoutfactory.oSelectDay);
 		oSelectDayOfMonth.selectByIndex(2);
 		
-		Select oSelectMonthOfYear=new Select(pageObject.oSelectMonth);
+		Select oSelectMonthOfYear=new Select(pagewithoutfactory.oSelectMonth);
 		oSelectMonthOfYear.selectByValue("4");
+		logger.error("Error:");
 		
-		Select oSelectYearOfCentury=new Select(pageObject.oSelectYear);
+		Select oSelectYearOfCentury=new Select(pagewithoutfactory.oSelectYear);
 		oSelectYearOfCentury.selectByVisibleText("2019");
+		logger.fatal("Fatal:");
 		
-		File cFileX=scrShot.getScreenshotAs(OutputType.FILE);
-		File dFileX=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Seleniumshots\\selectdetails.png");
+		File cFileNext=scrShot.getScreenshotAs(OutputType.FILE);
+		Calendar calsNext= Calendar.getInstance();
+		//Date currentDate=new Date();
+		//calsNext.setTime(currentDate);
+		calsNext.add(Calendar.DATE, 1);
+		Date calNext=calsNext.getTime();
+		File dFileNext=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Seleniumshots\\" + fs.format(calNext) +".png");
 		try {
-			FileUtils.copyFile(cFileX, dFileX);
+			FileUtils.copyFile(cFileNext, dFileNext);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		int size=pageObject.radioGender.size();
+		int size=pagewithoutfactory.radioGender.size();
 		for(int i=0;i<size;i++)
 		{
-			WebElement option=pageObject.radioGender.get(i);
+			WebElement option=pagewithoutfactory.radioGender.get(i);
 			String text=option.getText();
-			if(text.equals("Male"))
-			{
-				if(!option.isSelected())
-				option.click();
-				break;
-		    }
+			
+			   if(!option.isSelected())
+				{option.click();
+				break;}
+		    
 	    }
 		
-		File cFileY=scrShot.getScreenshotAs(OutputType.FILE);
-		File dFileY=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Seleniumshots\\radiodetails.png");
-		try {
-			FileUtils.copyFile(cFileY, dFileY);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		//pageObject.radioFemale.click();
-	    //pageObject.btnSignUp.click();
-		js.executeScript("arguments[0].click();", pageObject.btnSignUp);
+		js.executeScript("arguments[0].click();", pagewithoutfactory.btnSignUp);
 		
 		Actions act=new Actions(driver);
-		act.moveToElement(pageObject.firstname).build().perform();
-		pageObject.lastname.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		act.moveToElement(pagewithoutfactory.firstname).build().perform();
+		pagewithoutfactory.lastname.sendKeys(Keys.chord(Keys.CONTROL, "a"));
 		
 	}
 }

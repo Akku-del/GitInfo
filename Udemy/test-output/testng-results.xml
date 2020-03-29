@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="12" started-at="2020-03-22T04:48:51Z" finished-at="2020-03-22T04:48:51Z">
+  <suite name="Suite" duration-ms="37419" started-at="2020-03-28T09:53:56Z" finished-at="2020-03-28T09:54:33Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="12" started-at="2020-03-22T04:48:51Z" finished-at="2020-03-22T04:48:51Z">
+    <test name="Test" duration-ms="37419" started-at="2020-03-28T09:53:56Z" finished-at="2020-03-28T09:54:33Z">
+      <class name="practest.Udemy.HomePage">
+        <test-method status="PASS" signature="maindata()[pri:0, instance:practest.Udemy.HomePage@523884b2]" name="maindata" duration-ms="37336" started-at="2020-03-28T15:23:56Z" finished-at="2020-03-28T15:24:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- maindata -->
+      </class> <!-- practest.Udemy.HomePage -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

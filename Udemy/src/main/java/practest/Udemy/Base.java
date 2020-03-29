@@ -14,9 +14,10 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class Base 
 {
 	public static WebDriver driver=null;
-	public WebDriver initializeDriver() throws IOException 
+	
+	public static WebDriver initializeDriver() throws IOException 
 	{
-		
+		System.out.println("initializeDriver");
      Properties prop=new Properties(); 
      FileInputStream fileInputStream=new FileInputStream("C:\\Users\\Nidhi Gupta\\eclipse-practice\\Udemy\\dataFile.properties");
      prop.load(fileInputStream);
@@ -24,7 +25,9 @@ public class Base
      
      if(browser.equals("chrome"))
      {
-    	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nidhi Gupta\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    	 
+    	 System.setProperty("webdriver.chrome.driver","C:\\Users\\Nidhi Gupta\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    	 
     	 driver=new ChromeDriver();
     	 
      }
