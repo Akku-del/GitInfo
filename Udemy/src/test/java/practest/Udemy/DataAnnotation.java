@@ -174,11 +174,13 @@ public class DataAnnotation {
 						System.out.println("CellType:" + type.toString());
 						SimpleDateFormat ft= new SimpleDateFormat("yyyyMMdd");
 						Date d=ws.getRow(i).getCell(j).getDateCellValue();
+						System.out.println("Display:");
 						data[i][j]=ft.format(d);
 					    break;
 					}
 				data[i][j]=ws.getRow(i).getCell(j).getNumericCellValue();
 				System.out.println("CellType:" + type.toString());
+				System.out.println("");
 				}
 			}
 		}
