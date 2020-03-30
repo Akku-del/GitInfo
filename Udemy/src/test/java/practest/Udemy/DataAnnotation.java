@@ -57,21 +57,8 @@ public class DataAnnotation {
 		System.out.println("you have provided password as::"+password);
 	}
 
-	@BeforeMethod
 	 
-	 public void beforeMethod() {
 	 
-	 System.out.println("This will execute before every Method");
-	 
-	 }
-	 
-	 @Test
-	 
-	 public void afterMethod() {
-	 
-	 System.out.println("This will execute after every Method");
-	 
-	 }
 	 
 	 
 @Test
@@ -128,7 +115,8 @@ public class DataAnnotation {
 					}
 				data[i][j]=ws.getRow(i).getCell(j).getNumericCellValue();
 				System.out.println("CellType:" + type.toString());
-				System.out.println("");
+				System.out.println("tester");
+				System.out.println("tester:1");
 				}
 			}
 		}
