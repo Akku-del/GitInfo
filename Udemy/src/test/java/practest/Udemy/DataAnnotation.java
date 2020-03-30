@@ -65,7 +65,7 @@ public class DataAnnotation {
 	 
 	 }
 	 
-	 @AfterMethod
+	 @Test
 	 
 	 public void afterMethod() {
 	 
