@@ -1,17 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="33279" started-at="2020-03-29T10:59:13Z" finished-at="2020-03-29T10:59:46Z">
+  <suite name="Default suite" duration-ms="1048" started-at="2020-03-30T15:15:35Z" finished-at="2020-03-30T15:15:37Z">
     <groups>
+      <group name="Cars">
+        <method signature="DataAnnotation.grouping()[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="grouping" class="practest.Udemy.DataAnnotation"/>
+      </group> <!-- Cars -->
+      <group name="Sedan">
+        <method signature="DataAnnotation.grouping()[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="grouping" class="practest.Udemy.DataAnnotation"/>
+      </group> <!-- Sedan -->
     </groups>
-    <test name="Test" duration-ms="33279" started-at="2020-03-29T10:59:13Z" finished-at="2020-03-29T10:59:46Z">
-      <class name="practest.Udemy.HomePage">
-        <test-method status="PASS" signature="maindata()[pri:0, instance:practest.Udemy.HomePage@61832929]" name="maindata" duration-ms="33257" started-at="2020-03-29T16:29:13Z" finished-at="2020-03-29T16:29:46Z">
+    <test name="Default test" duration-ms="1048" started-at="2020-03-30T15:15:35Z" finished-at="2020-03-30T15:15:37Z">
+      <class name="practest.Udemy.DataAnnotation">
+        <test-method status="PASS" signature="gestDisabled()[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="gestDisabled" duration-ms="19" started-at="2020-03-30T20:45:35Z" finished-at="2020-03-30T20:45:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- maindata -->
-      </class> <!-- practest.Udemy.HomePage -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- gestDisabled -->
+        <test-method status="PASS" signature="grouping()[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="grouping" duration-ms="0" started-at="2020-03-30T20:45:36Z" finished-at="2020-03-30T20:45:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grouping -->
+        <test-method status="PASS" signature="priorityOne()[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="priorityOne" duration-ms="0" started-at="2020-03-30T20:45:36Z" finished-at="2020-03-30T20:45:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- priorityOne -->
+        <test-method status="PASS" signature="setData(java.lang.String, java.lang.String)[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="setData" duration-ms="0" started-at="2020-03-30T20:45:36Z" data-provider="getExcelData" finished-at="2020-03-30T20:45:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ID]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setData -->
+        <test-method status="PASS" signature="setData(java.lang.String, java.lang.String)[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="setData" duration-ms="0" started-at="2020-03-30T20:45:36Z" data-provider="getExcelData" finished-at="2020-03-30T20:45:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC_01]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Akku]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setData -->
+        <test-method status="PASS" signature="setData(java.lang.String, java.lang.String)[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="setData" duration-ms="1" started-at="2020-03-30T20:45:37Z" data-provider="getExcelData" finished-at="2020-03-30T20:45:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC_02]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Gaurav]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setData -->
+        <test-method status="PASS" signature="setData(java.lang.String, java.lang.String)[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="setData" duration-ms="5" started-at="2020-03-30T20:45:37Z" data-provider="getExcelData" finished-at="2020-03-30T20:45:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC_03]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[20191211]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setData -->
+        <test-method status="PASS" signature="priorityReset()[pri:0, instance:practest.Udemy.DataAnnotation@523884b2]" name="priorityReset" duration-ms="2" started-at="2020-03-30T20:45:37Z" depends-on-methods="practest.Udemy.DataAnnotation.grouping" finished-at="2020-03-30T20:45:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- priorityReset -->
+      </class> <!-- practest.Udemy.DataAnnotation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
