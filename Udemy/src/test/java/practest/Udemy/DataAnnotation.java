@@ -57,7 +57,6 @@ public class DataAnnotation {
 		System.out.println("you have provided password as::"+password);
 	}
 
-	/*
 	@BeforeMethod
 	 
 	 public void beforeMethod() {
@@ -120,7 +119,6 @@ public class DataAnnotation {
 		 System.out.println("This will execute after the Test Suite");
 		 
 		 }
-		 */
 	
 	@DataProvider
 	public Object[][] getExcelData() throws IOException {
