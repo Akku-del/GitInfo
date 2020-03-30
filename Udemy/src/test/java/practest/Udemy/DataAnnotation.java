@@ -58,25 +58,6 @@ public class DataAnnotation {
 	}
 
 	 
-	 
-	 
-	 
-@Test
-	 
-	 public void afterMethod1() {
-	 
-	 System.out.println("This will execute after every Method");
-	 
-	 }
-	 @BeforeClass
-	 
-	 public void beforeClass() {
-	 
-	 System.out.println("This will execute before the Class");
-	 
-	 }
-	 
-	 
 	
 	@DataProvider
 	public Object[][] getExcelData() throws IOException {
