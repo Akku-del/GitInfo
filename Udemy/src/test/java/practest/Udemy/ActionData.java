@@ -17,13 +17,11 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-//log4j properties not working
-//git pull not taking updated code from remote branch to local branch repository
-//difference between git fetch and git pull
-//can we push code from develop local branch to master remote branch and vice versa
+
+//difference between git fetch and git pull;
+//maven goals
 //sure-fire reports
 //jenkins
-//what are maven goals
 //rerun scripsts after failure
 public class ActionData extends Base{
 
