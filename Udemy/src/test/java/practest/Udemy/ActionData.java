@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +28,7 @@ import org.testng.annotations.Test;
 public class ActionData extends Base{
 
 	@Test
-	public void info() throws IOException
+	public void info() throws IOException, SQLException
 	{
 	Base.initializeDriver();
 	Actions a=new Actions(driver);
@@ -40,19 +41,20 @@ public class ActionData extends Base{
 	driver.switchTo().frame(frameElement);
 	WebElement element=driver.findElement(By.xpath("//a[text()='Skip to content']"));
 	element.click();
-	/*String nameOrId=null;
+	String nameOrId=null;
 	driver.switchTo().frame(nameOrId);
 	int index=0;
 	driver.switchTo().frame(index);
 	driver.switchTo().defaultContent();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	WebElement element;
+	WebElement elementy;
 	WebDriverWait wait=new WebDriverWait(driver, 20);
 	wait.until(ExpectedConditions.visibilityOf(element));
 	element.click();
-	DriverManager xl= DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+	//DriverManager xl= DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
 	String url="jdbc:oracle:thin:@localhost:1521:serviceName";
-	Connection conn=xl.getConnection(url, "root", "pass");
+	DriverManager xl=null;
+	Connection conn=DriverManager.getConnection(url, "root", "pass");
 	Statement s=conn.createStatement();
 	ResultSet r=s.executeQuery("Select * from table");
 	while(r.next())
@@ -61,7 +63,6 @@ public class ActionData extends Base{
 	}
 	
 	
-	*/
 	
 	}
 }
