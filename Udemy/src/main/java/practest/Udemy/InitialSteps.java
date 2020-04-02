@@ -41,7 +41,7 @@ public class InitialSteps extends Base
 	
 	InitialSteps()
 	{
-		System.out.println("Start Initial Steps");
+		System.out.println("Start Initial Steps::");
 	}
 	 
 	public void SignUp() throws IOException

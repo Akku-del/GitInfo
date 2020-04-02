@@ -17,9 +17,9 @@ public class Base
 	
 	public static WebDriver initializeDriver() throws IOException 
 	{
-		System.out.println("initializeDriver");
+		System.out.println("initializeDriver::");
      Properties prop=new Properties(); 
-     FileInputStream fileInputStream=new FileInputStream("C:\\Users\\Nidhi Gupta\\eclipse-practice\\Udemy\\dataFile.properties");
+     FileInputStream fileInputStream=new FileInputStream("C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\dataFile.properties");
      prop.load(fileInputStream);
      String browser=prop.getProperty("browser");
      

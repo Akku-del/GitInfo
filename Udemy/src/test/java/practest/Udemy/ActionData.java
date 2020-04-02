@@ -18,11 +18,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-//difference between git fetch and git pull;
-//maven goals
-//sure-fire reports
-//jenkins
-//rerun scripsts after failure
+
+
 public class ActionData extends Base{
 
 	@Test
