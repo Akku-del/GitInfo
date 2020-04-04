@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="37004" started-at="2020-04-04T09:03:09Z" finished-at="2020-04-04T09:03:46Z">
+  <suite name="Suite" duration-ms="53481" started-at="2020-04-04T11:52:04Z" finished-at="2020-04-04T11:52:57Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="37004" started-at="2020-04-04T09:03:09Z" finished-at="2020-04-04T09:03:46Z">
+    <test name="Test" duration-ms="53481" started-at="2020-04-04T11:52:04Z" finished-at="2020-04-04T11:52:57Z">
       <class name="practest.Udemy.HomePage">
-        <test-method status="PASS" signature="maindata()[pri:0, instance:practest.Udemy.HomePage@61832929]" name="maindata" duration-ms="36976" started-at="2020-04-04T14:33:09Z" finished-at="2020-04-04T14:33:46Z">
+        <test-method status="PASS" signature="maindata()[pri:0, instance:practest.Udemy.HomePage@61832929]" name="maindata" duration-ms="53444" started-at="2020-04-04T17:22:04Z" finished-at="2020-04-04T17:22:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- maindata -->
