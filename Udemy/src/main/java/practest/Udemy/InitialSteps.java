@@ -31,17 +31,17 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
-import practest.Udemy.InitialPage;
+import practest.Udemy.InitialPageWithPageFactory;
 import practest.Udemy.Base;
-import practest.Udemy.InitialWithoutPageFactory;
+import practest.Udemy.InitialPageWithoutPageFactory;
 
 public class InitialSteps extends Base
 {
 	private static final Logger logger = LogManager.getLogger(InitialSteps.class.getName());
 	
-	InitialSteps()
+	public InitialSteps()
 	{
-		System.out.println("Start Initial Steps::");
+		System.out.println("Open Application");
 	}
 	 
 	public void SignUp() throws IOException
@@ -49,35 +49,29 @@ public class InitialSteps extends Base
 		Base.initializeDriver();
 		driver.get("https://www.facebook.com");
 		driver.manage().window().maximize();
-		InitialWithoutPageFactory pagewithoutfactory=new InitialWithoutPageFactory();
-		InitialPage pageObject=new InitialPage();
-		logger.trace("Entering application.");
-		pageObject.firstnamepf.sendKeys("test");
-		pageObject.lastnamepf.sendKeys("bansal");
-		pagewithoutfactory.email.sendKeys("noreply@test.com");
-		pagewithoutfactory.password.sendKeys("akku");
+		//PageFactory
+		InitialPageWithoutPageFactory pageObjectWithoutPageFactory=new InitialPageWithoutPageFactory();
+		//WithoutPageFactory
+		InitialPageWithPageFactory pageObjectWithPageFactory=new InitialPageWithPageFactory();
+		
+		//Perform logging
+		logger.trace("Facebook Application is opened");
 		logger.info("Enter Info:");
-		TakesScreenshot scrShot =(TakesScreenshot)driver;
-		File cFileY=scrShot.getScreenshotAs(OutputType.FILE);
-		SimpleDateFormat fs=new SimpleDateFormat("yyyyMMddHHmmss");
-		Calendar cals= Calendar.getInstance();
-		Date cal=cals.getTime();
-		File dFileY=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Seleniumshots\\" + fs.format(cal) +".png");
-		try {
-			FileUtils.copyFile(cFileY, dFileY);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		pageObjectWithPageFactory.firstnamepf.sendKeys("test");
+		pageObjectWithPageFactory.lastnamepf.sendKeys("tester");
+		pageObjectWithoutPageFactory.email.sendKeys("noreply@test.com");
+		pageObjectWithoutPageFactory.password.sendKeys("root");
 		
+		//captureSS
+		Screenshot scr=new Screenshot();
+		scr.captureSS();
 		
+		//Java Script Executor
 		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();", pagewithoutfactory.oSelectDay);
+		js.executeScript("arguments[0].scrollIntoView();", pageObjectWithoutPageFactory.oSelectDay);
 		
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		
+		/*js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		js.executeScript("window.scrollTo(0, 0)");
-		
 		Robot robot;
 		try {
 			robot = new Robot();
@@ -87,40 +81,23 @@ public class InitialSteps extends Base
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
-		}
+		}*/
 		
 		//String log4jConfigFile = System.getProperty("user.dir") + File.separator + "log4j.xml";
 		//DOMConfigurator.configure(log4jConfigFile);
+		
 		logger.debug("Debug:");
-		Select oSelectDayOfMonth=new Select(pagewithoutfactory.oSelectDay);
+		Select oSelectDayOfMonth=new Select(pageObjectWithoutPageFactory.oSelectDay);
 		oSelectDayOfMonth.selectByIndex(2);
-		
-		Select oSelectMonthOfYear=new Select(pagewithoutfactory.oSelectMonth);
+		Select oSelectMonthOfYear=new Select(pageObjectWithoutPageFactory.oSelectMonth);
 		oSelectMonthOfYear.selectByValue("4");
-		logger.error("Error:");
-		
-		Select oSelectYearOfCentury=new Select(pagewithoutfactory.oSelectYear);
+		Select oSelectYearOfCentury=new Select(pageObjectWithoutPageFactory.oSelectYear);
 		oSelectYearOfCentury.selectByVisibleText("2019");
-		logger.fatal("Fatal:");
-		
-		File cFileNext=scrShot.getScreenshotAs(OutputType.FILE);
-		Calendar calsNext= Calendar.getInstance();
-		//Date currentDate=new Date();
-		//calsNext.setTime(currentDate);
-		calsNext.add(Calendar.DATE, 1);
-		Date calNext=calsNext.getTime();
-		File dFileNext=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Seleniumshots\\" + fs.format(calNext) +".png");
-		try {
-			FileUtils.copyFile(cFileNext, dFileNext);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		int size=pagewithoutfactory.radioGender.size();
+		scr.captureSS();
+		int size=pageObjectWithoutPageFactory.radioGender.size();
 		for(int i=0;i<size;i++)
 		{
-			WebElement option=pagewithoutfactory.radioGender.get(i);
+			WebElement option=pageObjectWithoutPageFactory.radioGender.get(i);
 			String text=option.getText();
 			
 			   if(!option.isSelected())
@@ -129,11 +106,16 @@ public class InitialSteps extends Base
 		    
 	    }
 		
-		js.executeScript("arguments[0].click();", pagewithoutfactory.btnSignUp);
+		js.executeScript("arguments[0].click();", pageObjectWithoutPageFactory.btnSignUp);
+		logger.error("Error:");
+		logger.fatal("Fatal:");
 		
+		js.executeScript("window.scrollTo(0, 0)");
 		Actions act=new Actions(driver);
-		act.moveToElement(pagewithoutfactory.firstname).build().perform();
-		pagewithoutfactory.lastname.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-		
+		act.moveToElement(pageObjectWithPageFactory.lastnamepf).click().build().perform();
+		act.keyDown(pageObjectWithPageFactory.lastnamepf,Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform(); 
+	    act.keyDown(Keys.CONTROL).sendKeys("C").keyUp(Keys.CONTROL).perform();
+	    act.keyDown(pageObjectWithPageFactory.firstnamepf,Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
+		scr.captureSS();
 	}
 }

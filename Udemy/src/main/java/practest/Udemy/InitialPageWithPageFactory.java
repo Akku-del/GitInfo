@@ -11,14 +11,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import practest.Udemy.*;
 
-public class InitialPage extends Base{
-
-	WebDriver localdriver=driver;
-InitialPage() throws IOException
+public class InitialPageWithPageFactory extends Base
 {
-	System.out.println("InitialWithPageFactory Page Objects::");
-	PageFactory.initElements(driver, this);
+public InitialPageWithPageFactory() throws IOException
+{
 	
+	System.out.println("PageFactory Object is initialized");
+	PageFactory.initElements(driver, this);
 }
 
 @FindBy(xpath="//input[@name='firstname']")

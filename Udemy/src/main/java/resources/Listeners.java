@@ -1,5 +1,7 @@
 package resources;
 
+
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -32,13 +34,13 @@ public class Listeners extends Base implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		TakesScreenshot scrShot =(TakesScreenshot)driver;
-		File cFileY=scrShot.getScreenshotAs(OutputType.FILE);
+		File cFile=scrShot.getScreenshotAs(OutputType.FILE);
 		SimpleDateFormat fs=new SimpleDateFormat("yyyyMMddHHmmss");
-		Calendar cals= Calendar.getInstance();
-		Date cal=cals.getTime();
-		File dFileY=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Seleniumshots\\" + fs.format(cal) +".png");
+		Calendar cal= Calendar.getInstance();
+		Date d=cal.getTime();
+		File dFile=new File("C:\\Users\\Nidhi Gupta\\Downloads\\Screenshots\\" + fs.format(cal) +".png");
 		try {
-			FileUtils.copyFile(cFileY, dFileY);
+			FileUtils.copyFile(cFile, dFile);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

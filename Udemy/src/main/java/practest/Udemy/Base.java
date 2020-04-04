@@ -17,7 +17,7 @@ public class Base
 	
 	public static WebDriver initializeDriver() throws IOException 
 	{
-		System.out.println("initializeDriver::");
+	 System.out.println("Web Driver is initialized");
      Properties prop=new Properties(); 
      FileInputStream fileInputStream=new FileInputStream("C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\src\\main\\resources\\dataFile.properties");
      prop.load(fileInputStream);
@@ -25,11 +25,8 @@ public class Base
      
      if(browser.equals("chrome"))
      {
-    	 
     	 System.setProperty("webdriver.chrome.driver","C:\\Users\\Nidhi Gupta\\Downloads\\chromedriver_win32\\chromedriver.exe");
-    	 
-    	 driver=new ChromeDriver();
-    	 
+    	 driver=new ChromeDriver(); 
      }
      else if(browser.equals("firefox"))
      {

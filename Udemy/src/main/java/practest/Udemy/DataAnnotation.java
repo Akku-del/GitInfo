@@ -1,4 +1,4 @@
-package resources;
+package practest.Udemy;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -57,8 +57,6 @@ public class DataAnnotation {
 		System.out.println("you have provided password as::"+password);
 	}
 
-	 
-	
 	@DataProvider
 	public Object[][] getExcelData() throws IOException {
 		FileInputStream fs=new FileInputStream("C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\resources\\Akku.xlsx");

@@ -1,5 +1,4 @@
-package resources;
-/*
+package practest.Udemy;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -100,10 +99,9 @@ public class SureReports {
 		Date d=new Date();
 		String filedest=System.getProperty("user.dir") + "\\reports\\surefire-reports\\index.html";
 	    File f=new File(filedest);
-	    String sb=System.getProperty("user.dir") + "\\reports\\surefire-reports\\" +sd.format(d).toString();
+	    String sb=System.getProperty("user.dir") + "\\output\\surefire-reports\\" +sd.format(d).toString();
 	    File dest=new File(sb);
 	    f.renameTo(dest);
 	    
 	}
 }
-*/

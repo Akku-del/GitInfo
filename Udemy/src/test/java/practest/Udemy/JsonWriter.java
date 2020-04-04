@@ -1,4 +1,4 @@
-/*package practest.Udemy;
+package practest.Udemy;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -12,7 +12,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class Json {
+public class JsonWriter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -58,4 +58,3 @@ public class Json {
 	}
 
 }
-*/

@@ -8,8 +8,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class InitialWithoutPageFactory extends Base
+public class InitialPageWithoutPageFactory extends Base
 {
+	
+	InitialPageWithoutPageFactory()
+	{
+		System.out.println("Start Initial Without Page Factory PageObjects");
+	}
 	WebElement firstname=driver.findElement(By.xpath("//input[@name='firstname']"));
 	WebElement lastname=driver.findElement(By.xpath("//input[@name='lastname']"));
 	WebElement email=driver.findElement(By.xpath("//input[contains(@name,'reg_email')  and @aria-label='Mobile number or email address']"));
@@ -23,11 +28,5 @@ public class InitialWithoutPageFactory extends Base
 	WebElement radioFemale=driver.findElement(By.xpath("//label[text()='Female']//..//input"));
 
 	WebElement btnSignUp=driver.findElement(By.xpath("//button[text()='Sign Up' and @type='submit']"));
-	
-	InitialWithoutPageFactory()
-	{
-		System.out.println("Start Initial Without Page Factory PageObjects");
-	}
-	
-	
+		
 }

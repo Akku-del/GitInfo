@@ -1,4 +1,4 @@
-package resources;
+package practest.Udemy;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
