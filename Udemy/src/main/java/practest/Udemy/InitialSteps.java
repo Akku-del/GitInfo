@@ -120,7 +120,7 @@ public class InitialSteps extends Base
 		Actions act=new Actions(driver);
 		act.moveToElement(pageObjectWithPageFactory.lastnamepf).click().build().perform();
 		act.keyDown(pageObjectWithPageFactory.lastnamepf,Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform(); 
-	    act.keyDown(Keys.CONTROL).sendKeys("C").keyUp(Keys.CONTROL).perform();
+	    act.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
 	    act.keyDown(pageObjectWithPageFactory.firstnamepf,Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
 		scr.captureSS();
 	}
