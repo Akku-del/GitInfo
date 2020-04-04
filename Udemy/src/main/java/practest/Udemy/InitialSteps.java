@@ -49,6 +49,12 @@ public class InitialSteps extends Base
 		Base.initializeDriver();
 		driver.get("https://www.facebook.com");
 		driver.manage().window().maximize();
+		String nameofCurrMethod = new Object() {} 
+        .getClass() 
+        .getEnclosingMethod() 
+        .getName(); 
+        System.out.println("Name of current method: " 
+                + nameofCurrMethod);
 		//PageFactory
 		InitialPageWithoutPageFactory pageObjectWithoutPageFactory=new InitialPageWithoutPageFactory();
 		//WithoutPageFactory
