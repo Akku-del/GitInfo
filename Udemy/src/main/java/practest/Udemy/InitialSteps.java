@@ -132,7 +132,7 @@ public class InitialSteps extends Base
 		js.executeScript("arguments[0].click();", pagewithoutfactory.btnSignUp);
 		
 		Actions act=new Actions(driver);
-		act.moveToElement(pagewithoutfactory.firstname).build().perform();
+		act.moveToElement(pagewithoutfactory.lastname).doubleClick().build().perform();
 		pagewithoutfactory.lastname.sendKeys(Keys.chord(Keys.CONTROL, "a"));
 		
 	}
