@@ -72,11 +72,9 @@ public class InitialSteps extends Base
 		
 		
 		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();", pagewithoutfactory.oSelectDay);
-		
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		
-		js.executeScript("window.scrollTo(0, 0)");
+		//js.executeScript("arguments[0].scrollIntoView();", pagewithoutfactory.oSelectDay);
+		//js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		//js.executeScript("window.scrollTo(0, 0)");
 		
 		Robot robot;
 		try {
