@@ -21,7 +21,8 @@ public class Base
      Properties prop=new Properties(); 
      FileInputStream fileInputStream=new FileInputStream("C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\dataFile.properties");
      prop.load(fileInputStream);
-     String browser=prop.getProperty("browser");
+     String browserprop=prop.getProperty("browser");
+     String browser=System.getenv("browsertype");
      
      if(browser.equals("chrome"))
      {
