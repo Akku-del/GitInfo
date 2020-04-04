@@ -19,6 +19,7 @@ public class HomePage extends Base{
 		
 		InitialSteps iSteps=new InitialSteps();
 		iSteps.SignUp();
+		System.out.println("Function");
 		driver.quit();
 		
 	}

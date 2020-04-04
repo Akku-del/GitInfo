@@ -1,4 +1,4 @@
-package practest.Udemy;
+package resources;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +13,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import practest.Udemy.Base;
+
 public class Listeners extends Base implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
@@ -23,7 +25,7 @@ public class Listeners extends Base implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		
-		System.out.println("Test Success:");
+		System.out.println("Test Success::");
 		
 	}
 

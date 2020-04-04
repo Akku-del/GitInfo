@@ -1,4 +1,4 @@
-package practest.Udemy;
+package resources;
 
 public class DataProviderGroupsAnnotations {
 

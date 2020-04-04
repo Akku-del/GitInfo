@@ -12,11 +12,11 @@ import org.openqa.selenium.support.PageFactory;
 import practest.Udemy.*;
 
 public class InitialPage extends Base{
-	
-WebDriver localdriver=driver;
+
+	WebDriver localdriver=driver;
 InitialPage() throws IOException
 {
-	System.out.println("InitialWithPageFactory Page Objects");
+	System.out.println("InitialWithPageFactory Page Objects::");
 	PageFactory.initElements(driver, this);
 	
 }

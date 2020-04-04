@@ -19,7 +19,7 @@ public class Base
 	{
 		System.out.println("initializeDriver::");
      Properties prop=new Properties(); 
-     FileInputStream fileInputStream=new FileInputStream("C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\dataFile.properties");
+     FileInputStream fileInputStream=new FileInputStream("C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\src\\main\\resources\\dataFile.properties");
      prop.load(fileInputStream);
      String browser=prop.getProperty("browser");
      

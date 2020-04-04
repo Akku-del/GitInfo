@@ -1,4 +1,4 @@
-package practest.Udemy;
+package resources;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -39,7 +39,7 @@ public class JSONReader {
 	            i = ((Map) iphone.next()).entrySet().iterator(); 
 	            while (i.hasNext()) { 
 	                Map.Entry pair = (Map.Entry) i.next(); 
-	                System.out.println(pair.getKey() + " : " + pair.getValue()); 
+	                System.out.println(pair.getKey() + " :: " + pair.getValue()); 
 	            } 
 	        } 
 	}

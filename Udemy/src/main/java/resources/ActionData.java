@@ -1,4 +1,4 @@
-package practest.Udemy;
+package resources;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import practest.Udemy.Base;
 
 
 

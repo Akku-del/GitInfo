@@ -1,4 +1,4 @@
-package practest.Udemy;
+package resources;
 
 import java.io.BufferedWriter;
 import java.io.File;
