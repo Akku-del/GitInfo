@@ -14,7 +14,7 @@ import practest.Udemy.*;
 
 public class HomePage extends Base{
 	
-	@Test
+	@Test(groups= {"TC_01","regression"})
 	public void maindata() throws IOException {
 		
 		InitialSteps iSteps=new InitialSteps();

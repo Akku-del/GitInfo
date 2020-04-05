@@ -22,7 +22,7 @@ public class Base
      FileInputStream fileInputStream=new FileInputStream("C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\dataFile.properties");
      prop.load(fileInputStream);
      String browserprop=prop.getProperty("browser");
-     String browser=System.getenv("browsertype");
+     String browser =System.getenv("browsertype");
      
      if(browser.equals("chrome"))
      {

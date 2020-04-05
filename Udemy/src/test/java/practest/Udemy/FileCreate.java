@@ -5,9 +5,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.testng.annotations.Test;
+
 public class FileCreate {
 
-	public static void main(String[] args) throws IOException {
+	@Test(groups= {"TC_02","smoke"})
+	public void fileCreationMethod() throws IOException {
 		// TODO Auto-generated method stub
 		 	
 		String textToAppend = "Happy Learning !!";
