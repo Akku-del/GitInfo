@@ -22,6 +22,8 @@ public class JSONReader {
 		 JSONParser parser = new JSONParser();
 		 JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("C:\\Users\\Nidhi Gupta\\git\\flash\\Udemy\\resources\\JSONExample.json"));
 		 System.out.println("" + jsonObject.get("firstname").toString());
+		 String age=(String) jsonObject.get("age").toString();
+		 System.out.println("age:" +age);
 		 Map m=(Map) jsonObject.get("address");
 		 Iterator i =m.entrySet().iterator();
 		 while(i.hasNext())
