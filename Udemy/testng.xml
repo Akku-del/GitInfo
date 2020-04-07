@@ -2,9 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
-    <classes>
-      <class name="practest.Udemy.FileCreate"/>
-      <class name="practest.Udemy.HomePage"/>
-    </classes>
+    <packages>
+    <package name ="practest.info.tests"></package>
+    </packages>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

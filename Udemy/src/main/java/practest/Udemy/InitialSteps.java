@@ -39,7 +39,7 @@ public class InitialSteps extends Base
 {
 	private static final Logger logger = LogManager.getLogger(InitialSteps.class.getName());
 	
-	InitialSteps()
+	public InitialSteps()
 	{
 		System.out.println("Start Initial Steps::");
 	}

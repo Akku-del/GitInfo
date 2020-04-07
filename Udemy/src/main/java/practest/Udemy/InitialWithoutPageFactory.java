@@ -24,7 +24,7 @@ public class InitialWithoutPageFactory extends Base
 
 	WebElement btnSignUp=driver.findElement(By.xpath("//button[text()='Sign Up' and @type='submit']"));
 	
-	InitialWithoutPageFactory()
+	public InitialWithoutPageFactory()
 	{
 		System.out.println("Start Initial Without Page Factory PageObjects");
 	}

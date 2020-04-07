@@ -1,4 +1,4 @@
-package practest.Udemy;
+package practest.info.tests;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -18,12 +18,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-//tags-understnd
-//git branch identifier in jenkins understand with hit and trial
-//jenkins-nodes understand
-//how to execute through groups in main project
-//how to execute cmd in main project
-//behaviour driven approach
+import practest.Udemy.Base;
+
+/*behaviour driven approach learn*/
 
 public class ActionData extends Base{
 

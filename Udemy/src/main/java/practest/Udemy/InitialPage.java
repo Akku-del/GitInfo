@@ -9,12 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import practest.Udemy.*;
-
 public class InitialPage extends Base{
 	
 WebDriver localdriver=driver;
-InitialPage() throws IOException
+public InitialPage() throws IOException
 {
 	System.out.println("InitialWithPageFactory Page Objects");
 	PageFactory.initElements(driver, this);

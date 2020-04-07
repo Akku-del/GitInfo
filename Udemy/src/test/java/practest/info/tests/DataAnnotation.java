@@ -1,4 +1,4 @@
-package practest.Udemy;
+package practest.info.tests;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
